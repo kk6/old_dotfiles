@@ -1,0 +1,97 @@
+[ui]
+username = kk6
+ssh = ssh -C
+editor = vim
+ignore = ~/.hgignore
+merge = vimdiff
+
+[pager]
+pager = LESS='-R' less
+quiet = True
+attend = help, log, diff, glog, wdiff, branches, annotate, cat, export, qdiff, glc, blame
+
+[extensions]
+color =
+eol =
+hgext.convert =
+hgext.extdiff =
+shelve =
+histedit =
+info = ~/.hgext/info.py
+mq =
+pager =
+progress =
+purge =
+rebase =
+record =
+schemes =
+transplant =
+hgflow = ~/.hgext/hgflow/hgflow-v0.4.pyhgflow-v0.4.py
+prompt = ~/.hgext/hg-prompt/prompt.py
+
+[color]
+mode = ansi
+
+[extdiff]
+cmd.wdiff = wdiff
+
+[diff]
+git = True
+
+[mq]
+secret = True
+
+[schemes]
+bb = ssh://hg@bitbucket.org/
+gh = git://github.com/
+ghs = git+ssh://github.com/
+
+[alias]
+#_status = status
+#st = ! $HG _status $($HG root) $HG_ARGS
+glog = log -G
+glc = log -G --style compact
+
+# branch
+b = branch
+#bs = branches -a
+
+# resolve
+mark = resolve -m
+unmark = resolve -u
+conflicts = resolve -l
+uselocal = resolve --tool internal:local
+useother = resolve --tool internal:other
+
+# push
+nudge = push --rev .
+#push = ! echo -e "\033[31m(use 'hg nudge' to push changesets)\033[m"
+
+# fix latest commit message
+fix = ! \
+  $HG shelve --all -n 'tmp.hg-fix' && \
+  if $HG qtop > /dev/null; then \
+      $HG qrefresh -m "$1"; \
+  else \
+      $HG qimport -r .; \
+      $HG qrefresh -m "$1"; \
+      $HG qfinish -a; \
+  fi; \
+  $HG unshelve -n 'tmp.hg-fix'
+
+# hg-now
+now = ! $HG commit -m "[from now] `date`"
+
+# hg blame
+blame = annotate --user -c
+
+[bookmarks]
+track.current = True
+
+[hooks]
+update.clean = find . -name \*.pyc -or -name \*.orig | xargs rm -f
+pretxncommit.pdb = python:~/.hgext/hookpdb/check.py:check_pdb
+pretxncommit.unknown = python:~/.hgext/unknown/warning.py:warning
+
+# Local settings
+%include ~/.hgrc_local
