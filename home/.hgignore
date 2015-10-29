@@ -1,0 +1,65 @@
+syntax: glob
+
+bin/
+obj/
+*.suo
+*.user
+*.orig
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+.DS_Store
+tags/
+.tags
+hg-checklink-*
+media/
+coverage_html_report/
+.idea/
+__pycache__/
+
+#########################################################################
+# from https://github.com/github/gitignore/blob/master/Django.gitignore
+#########################################################################
+*.log
+*.pot
+local_settings.py
+
+#########################################################################
+# from https://github.com/github/gitignore/blob/master/Python.gitignore
+##########################################################################
+*.py[cod]
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject

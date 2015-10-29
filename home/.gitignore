@@ -265,7 +265,7 @@ pip-selfcheck.json
 ### Mercurial ###
 /.hg/*
 */.hg/*
-.hgignore
+#.hgignore
 
 
 ### Rails ###

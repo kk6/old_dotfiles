@@ -2,7 +2,7 @@
 username = kk6
 ssh = ssh -C
 editor = vim
-ignore = ~/.hgignore
+ignore = ~/.hgignore.local
 merge = vimdiff
 
 [pager]
