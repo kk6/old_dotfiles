@@ -5,7 +5,7 @@
 ```sh
 
 $ homesick clone kk6/dotfiles
-$ homesick symlink dotfiles
+$ homesick link dotfiles
 
 ```
 
