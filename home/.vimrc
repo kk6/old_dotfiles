@@ -20,6 +20,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'kana/vim-fakeclip'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
@@ -44,34 +45,64 @@ set noundofile
 
 set ruler
 
-" 分割ウインドウの移動のマッピングを変更
+"----------------------------------------------------
+" Window
+"----------------------------------------------------
+
+" To change the key-mapping of the split window.
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
 
+"----------------------------------------------------
+" Search
+"----------------------------------------------------
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+" Press ESC twice to turn off the highlight.
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
+" The search word in the center of the screen.
+noremap n nzz
+noremap N Nzz
+
+"----------------------------------------------------
+" Edit
+"----------------------------------------------------
+set clipboard=autoselect,unnamed
+set autoread
+"----------------------------------------------------
+" Key-mappings
+"----------------------------------------------------
+
+" Edit (g)vimrc
+nnoremap <silent> <Space>ev :<C-u>vsplit $MYVIMRC<CR>
+nnoremap <silent> <Space>eg :<C-u>vsplit $MYGVIMRC<CR>
+" Reload (g)vimrc
+nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
+nnoremap <silent> <Space>rg :<C-u>source $MYGVIMRC<CR>
+
 "-----------------------------------
 " unite.vim
 "-----------------------------------
-" 入力モードで開始する
 let g:unite_enable_start_insert=1
-"バッファ一覧
+" Buffers
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-"ファイル一覧
+" Files
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=file file<CR>
-"register list"
+" Register list
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
-"最近使ったファイルの一覧
+" Recent files
 nnoremap <silent> ,ua :<C-u>Unite buffer file_mru<CR>
-"Unite-outeline
-nnoremap <silent> ,uo :<C-u>Unite outline<CR>
 
 "-----------------------------------
 " vimfiler
 "-----------------------------------
-"vimデフォルトのエクスプローラをvimfilerで置き換える
 let g:vimfiler_as_default_explorer = 1
-"セーフモードを無効にした状態で起動する
 let g:vimfiler_safe_mode_by_default = 0
-",e で現在開いているバッファのディレクトリを開く
+" Press `,e`, open the directory of the current buffer.
 nnoremap <silent> ,e :<C-u>VimFilerBufferDir<CR>
