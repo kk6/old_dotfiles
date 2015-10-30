@@ -92,3 +92,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # rbenv
 eval "$(rbenv init -)"
+
+# Python
+export PYTHONSTARTUP=$HOME/.pythonstartup
