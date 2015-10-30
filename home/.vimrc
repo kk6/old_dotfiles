@@ -85,6 +85,8 @@ nnoremap <silent> <Space>eg :<C-u>vsplit $MYGVIMRC<CR>
 " Reload (g)vimrc
 nnoremap <silent> <Space>rv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif <CR>
 nnoremap <silent> <Space>rg :<C-u>source $MYGVIMRC<CR>
+" auto reload vimrc when editing it
+autocmd! bufwritepost .vimrc source ~/.vimrc
 
 "-----------------------------------
 " unite.vim
