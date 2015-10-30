@@ -84,8 +84,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# OS標準のvimをKaoriYa版MacVimで置き換える
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+# Use Kaoriya Vim
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+fi
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
