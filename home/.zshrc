@@ -98,3 +98,4 @@ eval "$(rbenv init -)"
 
 # Python
 export PYTHONSTARTUP=$HOME/.pythonstartup
+export EDITOR=vim
