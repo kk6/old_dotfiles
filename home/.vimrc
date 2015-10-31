@@ -32,6 +32,7 @@ NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'justinmk/vim-dirvish'
 
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
