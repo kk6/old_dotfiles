@@ -1,4 +1,13 @@
+# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+
+"""
+Warning unmanaged files
+~~~~~~~~~~~~
+This extension displays a warning if find unmanaged files to commit.
+
+:copyright: (c) 2015 by kk6
+"""
 
 import sys
 
