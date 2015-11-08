@@ -1,24 +1,24 @@
 [core]
-	excludesfile = /Users/kk6/.homesick/repos/dotfiles/home/.gitignore
+    excludesfile = /Users/kk6/.homesick/repos/dotfiles/home/.gitignore
     editor = /Applications/MacVim.app/Contents/MacOS/Vim
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [filter "hawser"]
     clean = git hawser clean %f
     smudge = git hawser smudge %f
     required = true
 [user]
-	name = kk6
-    email = "(none)"
+    name = kk6
+    email = "hiro.ashiya@gmail.com"
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
     diff = diff-highlight | less
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true
