@@ -102,3 +102,10 @@ eval "$(rbenv init -)"
 # Python
 export PYTHONSTARTUP=$HOME/.pythonstartup
 export EDITOR=vim
+export PATH=$HOME/.local/bin:$PATH
+#export PIT_CONFIG=.pitrc
+
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
