@@ -309,3 +309,5 @@ bower.json
 ### DotSettings ###
 *.DotSettings
 
+# other
+.DS_Store

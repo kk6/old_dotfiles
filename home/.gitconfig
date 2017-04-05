@@ -1,5 +1,5 @@
 [core]
-    excludesfile = /Users/kk6/.homesick/repos/dotfiles/home/.gitignore
+	excludesfile = /Users/kk6/.homesick/repos/dotfiles/home/.gitignore
     editor = /Applications/MacVim.app/Contents/MacOS/Vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -12,8 +12,8 @@
     smudge = git hawser smudge %f
     required = true
 [user]
-    name = kk6
-    email = "hiro.ashiya@gmail.com"
+	name = kk6
+	email = hiro.ashiya@gmail.com
 [pager]
     log = diff-highlight | less
     show = diff-highlight | less
@@ -22,3 +22,5 @@
     clean = git lfs clean %f
     smudge = git lfs smudge %f
     required = true
+[commit]
+	template = /Users/kk6/.stCommitMsg

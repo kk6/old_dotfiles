@@ -93,8 +93,8 @@ if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
   alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 fi
 
-# nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# nodebrew (deleted)
+# export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # rbenv
 eval "$(rbenv init -)"
@@ -108,6 +108,35 @@ export PATH=$HOME/.local/bin:$PATH
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
+    export PROJECT_HOME=$HOME/PycharmProjects
 fi
 
-alias ve='workon'
+alias v='workon'
+
+# Load local zshrc
+if [ -f ~/.zsh_local ]; then
+  source ~/.zsh_local
+fi
+
+alias jcal="v sandbox3;python -c 'import jcal; jcal.prcal(2016)';deactivate"
+
+# thefuck
+eval "$(thefuck --alias)"
+
+export PATH="/usr/local/p/versions/python:$PATH"
+
+# For pet
+# Add previous command to pet.
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+    sh -c "pet new `printf %q "$PREV"`"
+}
+
+# display snippets.
+function pet-select() {
+  BUFFER=$(pet search --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N pet-select
+bindkey '^s' pet-select
